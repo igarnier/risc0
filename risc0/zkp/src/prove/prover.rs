@@ -108,6 +108,8 @@ impl<'a, H: Hal> Prover<'a, H> {
     where
         E: EvalCheck<H>,
     {
+        println!("finalize: cycles = {}", self.cycles);
+
         // Set the poly mix value, which is used for constraint compression in the
         // DEEP-ALI protocol.
         let poly_mix = self.iop.random_ext_elem();
